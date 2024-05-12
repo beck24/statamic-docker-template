@@ -7,6 +7,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libwebp-dev \
     libgd-dev \
     libonig-dev \
+    git \
+    zip \
+    unzip \
 && docker-php-ext-configure gd \
             --prefix=/usr \
             --with-jpeg \
@@ -14,8 +17,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
             --with-xpm \
             --with-freetype \
 && docker-php-ext-install -j$(nproc) gd \
-&& docker-php-ext-install bcmath \
-    && docker-php-ext-install exif \
-    && docker-php-ext-install mbstring
+&& docker-php-ext-install bcmath exif mbstring \
+&& rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer:2.7.6 /usr/bin/composer /usr/local/bin/composer
 
 EXPOSE 80
