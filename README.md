@@ -15,3 +15,14 @@ Bring up the container
 ```bash
 docker compose up -d
 ```
+
+Log into the control panel
+
+http://localhost/cp
+
+email: `site-admin@example.com`
+
+password: `statamic`
+
+
+Change the email/password for production.

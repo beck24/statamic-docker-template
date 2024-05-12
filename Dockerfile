@@ -25,4 +25,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN echo "export PATH=${PATH}:~/.composer/vendor/bin" >> ~/.bashrc
 RUN composer global require statamic/cli
 
+RUN a2enmod rewrite
+
 EXPOSE 80
