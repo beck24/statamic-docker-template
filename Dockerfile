@@ -1,5 +1,7 @@
 FROM php:8.3.6-apache
 
+COPY --from=composer:2.7.6 /usr/bin/composer /usr/local/bin/composer
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
@@ -20,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 && docker-php-ext-install bcmath exif mbstring \
 && rm -rf /var/lib/apt/lists/*
 
-COPY --from=composer:2.7.6 /usr/bin/composer /usr/local/bin/composer
+RUN echo "export PATH=${PATH}:~/.composer/vendor/bin" >> ~/.bashrc
+RUN composer global require statamic/cli
 
 EXPOSE 80

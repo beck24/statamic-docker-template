@@ -1,4 +1,11 @@
 services:
+  # init container simply pre-mounts the volume and changes the owner to fix file permissions
+  # otherwise it gets mounted as root and statamic can't write to it
+  apache-init:
+    image: php:8.3.6-apache
+    volumes:
+      - ./src:/var/www/html:rw
+    command: chown -R www-data:www-data /var/www/html
 
   apache:
     volumes:
@@ -10,6 +17,9 @@ services:
     networks:
       - default
       - nginx-router
+    depends_on:
+      apache-init:
+        condition: service_completed_successfully
 
 # networks:
 #   nginx-router:

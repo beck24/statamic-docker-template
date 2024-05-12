@@ -1,4 +1,4 @@
-# Summer Village of Castle Island
+# Laravel 11 / Statamic
 
 ## Installation
 
