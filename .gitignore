@@ -1,0 +1,4 @@
+apache/php.ini
+
+.env
+docker-compose.override.yml

@@ -1,0 +1,16 @@
+services:
+
+  apache:
+    volumes:
+      - ./src/public_html:/var/www/html:rw
+      - ./apache/php.ini:/usr/local/etc/php/php.ini
+    ports:
+      - "${HTTP_PORT}:80"
+      # - "${HTTPS_PORT}:443"
+    networks:
+      - default
+      - nginx-router
+
+# networks:
+#   nginx-router:
+#     external: true

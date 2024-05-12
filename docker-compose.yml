@@ -1,0 +1,24 @@
+services:
+
+  apache:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: "${PROJECT_PREFIX}-php"
+    secrets:
+      - mail_smtp_server
+      - mail_username
+      - mail_password
+      - mail_from
+      - mail_to
+
+secrets:
+  mail_smtp_server:
+    environment: MAIL_SMTP_SERVER
+  mail_username:
+    environment: MAIL_USERNAME
+  mail_password:
+    environment: MAIL_PASSWORD
+  mail_from:
+    environment: MAIL_FROM
+  mail_to:
+    environment: MAIL_TO
