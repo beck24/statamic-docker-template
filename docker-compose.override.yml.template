@@ -9,7 +9,8 @@ services:
 
   apache:
     volumes:
-      - ./src/public_html:/var/www/html:rw
+      - ./src:/var/www/html:rw
+      - ./apache/sites-available:/etc/apache2/sites-available
       - ./apache/php.ini:/usr/local/etc/php/php.ini
     ports:
       - "${HTTP_PORT}:80"

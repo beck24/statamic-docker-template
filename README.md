@@ -16,7 +16,32 @@ Bring up the container
 docker compose up -d
 ```
 
-Log into the control panel
+## Dependencies
+
+Composer is installed in the container.  To use it to install dependencies enter the container:
+
+```bash
+docker exec -it svci-php bash
+```
+
+Then navigate to the statamic directory and run composer
+
+```bash
+cd statamic
+composer install
+
+cp .env.example .env
+php artisan key:generate
+
+npm install
+npm run dev
+```
+
+```bash
+npm run build
+```
+
+### Log into the control panel
 
 http://localhost/cp
 

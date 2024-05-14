@@ -2,6 +2,11 @@ FROM php:8.3.6-apache
 
 COPY --from=composer:2.7.6 /usr/bin/composer /usr/local/bin/composer
 
+# Get NodeJS
+COPY --from=node:20.13-slim /usr/local/bin /usr/local/bin
+# Get npm
+COPY --from=node:20.13-slim /usr/local/lib/node_modules /usr/local/lib/node_modules
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
