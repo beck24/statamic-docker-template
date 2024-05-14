@@ -16,7 +16,7 @@ services:
       # - "${HTTPS_PORT}:443"
     networks:
       - default
-      - nginx-router
+      # - nginx-router
     depends_on:
       apache-init:
         condition: service_completed_successfully
