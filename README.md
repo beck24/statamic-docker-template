@@ -53,3 +53,10 @@ password: `statamic`
 
 
 Change the email/password for production.
+
+
+### Build docker image
+
+```bash
+docker build -t beck2424/statamic-starter .
+```

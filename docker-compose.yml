@@ -1,6 +1,8 @@
 services:
 
   apache:
+    # If the build ever fails, it should be pullable from dockerhub image
+    # image: beck2424/statamic-starter
     build:
       dockerfile: ./Dockerfile
     container_name: "${PROJECT_PREFIX}-php"
