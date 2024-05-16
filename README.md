@@ -2,7 +2,7 @@
 
 ## Installation
 
-Create `.env`, `docker-compose.override.yml`, and `000-default.conf` files and edit with environment specific variables
+Create `.env`, `docker-compose.override.yml`, and `000-default.conf` files and edit with environment specific variables.  Note for local dev with HMR the port 5173 should be forwarded.
 
 ```bash
 cp .env.template .env
@@ -36,6 +36,8 @@ php artisan key:generate
 npm install
 npm run dev
 ```
+
+To build production resources
 
 ```bash
 npm run build
