@@ -1,0 +1,61 @@
+title: 'Search Engine Optimization'
+fields:
+  -
+    handle: title
+    field:
+      character_limit: 150
+      type: text
+      display: Title
+      instructions: 'The title of the page, be sure to include key words that describe the content of the page.  Ideally a title should be no more than 60 characters long.'
+      listable: false
+  -
+    handle: description
+    field:
+      character_limit: '250'
+      type: textarea
+      display: Description
+      instructions: 'Description of the page.  Keep it short, no more than 170 characters ideally.'
+      listable: false
+  -
+    handle: og_title
+    field:
+      type: text
+      display: 'og:title'
+      instructions: 'The title you want to display on social media links to this page'
+      listable: false
+      character_limit: 150
+  -
+    handle: og_description
+    field:
+      character_limit: '250'
+      type: textarea
+      display: 'og:description'
+      instructions: 'The snippet of description shown on social media sites when this page is linked'
+      listable: false
+  -
+    handle: og_type
+    field:
+      options:
+        website: Website
+        article: Article
+      taggable: true
+      push_tags: true
+      clearable: true
+      type: select
+      display: 'og:type'
+      listable: false
+      instructions: 'For most pages this should be `website`.  Use `article` for single topic pages such as blog posts or news articles.'
+  -
+    handle: og_image
+    field:
+      max_files: 1
+      container: public
+      folder: images/og
+      restrict: true
+      type: assets
+      display: 'og:image'
+      instructions: |-
+        ### Best practices
+        - Use custom images for “shareable” pages (e.g., homepage, articles, etc.)
+        - Use your logo or any other branded image for the rest of your pages.
+        - Use images with a 1.91:1 ratio and minimum recommended dimensions of 1200x630 for optimal clarity across all devices.
