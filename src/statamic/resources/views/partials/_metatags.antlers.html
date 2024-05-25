@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>{{ seo_title ?? seo:title ?? site:name }}</title>
+
+{{ partial:metatag name="description" :content="seo_description ?? seo:description" }}
+{{ partial:metatag name="og:site_name" :content="seo_og_site_name ?? seo:og_site_name" type="property" }}
+{{ partial:metatag name="og:title" :content="seo_og_title ?? seo:og_title ?? seo_title ?? seo:title ?? site:name" type="property" }}
+{{ partial:metatag name="og:description" :content="seo_og_description ?? seo:og_description ?? seo_description ?? seo:description" type="property" }}
+{{ partial:metatag name="og:type" :content="seo_og_type ?? seo:og_type" type="property" }}
+{{ partial:metatag name="og:image" :content="seo_og_image ?? seo:og_image" type="property" }}
+{{ partial:metatag name="og:image:alt" :content="seo_og_image_alt ?? seo:og_image_alt" type="property" }}
+{{ partial:metatag name="og:country_name" :content="seo_og_country_name ?? seo:og_country_name" type="property" }}
+{{ partial:metatag name="og:latitude" :content="seo_og_latitude ?? seo:og_latitude" type="property" }}
+{{ partial:metatag name="og:longitude" :content="seo_og_longitude ?? seo:og_longitude" type="property" }}
+{{ partial:metatag name="og:region" :content="seo_og_region ?? seo:og_region" type="property" }}
+{{ partial:metatag name="rights" :content="seo_rights ?? seo:rights" }}
+{{ seo_advanced_metatags }}
+{{ seo:advanced_metatags }}
