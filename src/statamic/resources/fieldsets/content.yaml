@@ -1,0 +1,41 @@
+title: Content
+fields:
+  -
+    handle: content_blocks
+    field:
+      remove_empty_nodes: false
+      always_show_set_button: true
+      type: bard
+      display: 'Content Blocks'
+      sets:
+        raw_html:
+          display: 'Raw HTML'
+          instructions: 'For advanced users - code your own stuff, or copy/paste in widget code where necessary'
+          icon: programming-script-code-brackets
+          sets:
+            raw_html:
+              display: 'Raw HTML'
+              icon: programming-script-code-brackets
+              fields:
+                -
+                  handle: html
+                  field:
+                    type: code
+                    display: HTML
+                    instructions: 'Direct html to output'
+            image_block:
+              display: 'Image Block'
+              instructions: 'Add an image'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  handle: image
+                  field:
+                    max_files: 1
+                    container: public
+                    folder: images/image_block
+                    restrict: true
+                    type: assets
+                    display: Image
+                    validate:
+                      - image

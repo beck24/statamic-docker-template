@@ -1,0 +1,52 @@
+title: 'Block Builder'
+fields:
+  -
+    handle: sections
+    field:
+      remove_empty_nodes: false
+      always_show_set_button: true
+      type: bard
+      display: Sections
+      sets:
+        sections:
+          display: Sections
+          instructions: 'Select from a number of section types.  These are part of the main layout, typically determining the background color and how much of the horizontal screen is taken up'
+          icon: layout-header
+          sets:
+            default:
+              display: Default
+              fields:
+                -
+                  handle: width
+                  field:
+                    options:
+                      default: Default
+                      full: 'Full Width'
+                    default: default
+                    type: select
+                    display: Width
+                    instructions: 'How much horizontal space should the content be allowed to take up?  By default there is a max-width container that is centered on the page, however in certain cases you may want to take up the whole width on large screens.'
+                -
+                  handle: background_color
+                  field:
+                    options:
+                      default: Default
+                      primary: Primary
+                      secondary: Secondary
+                    max_items: 1
+                    default: default
+                    type: select
+                    display: 'Background Color'
+                    instructions: 'Background color for the section'
+                -
+                  handle: background_image
+                  field:
+                    max_files: 1
+                    container: public
+                    folder: images/section_backgrounds
+                    restrict: true
+                    type: assets
+                    display: 'Background Image'
+                    instructions: 'An image to display in the background of the section'
+                    validate:
+                      - image
