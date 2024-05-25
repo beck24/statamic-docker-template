@@ -17,6 +17,13 @@ fields:
       instructions: 'Description of the page.  Keep it short, no more than 170 characters ideally.'
       listable: false
   -
+    handle: og_site_name
+    field:
+      character_limit: 150
+      type: text
+      display: 'og:site_name'
+      instructions: 'The name of the site'
+  -
     handle: og_title
     field:
       type: text
@@ -59,6 +66,42 @@ fields:
         - Use custom images for “shareable” pages (e.g., homepage, articles, etc.)
         - Use your logo or any other branded image for the rest of your pages.
         - Use images with a 1.91:1 ratio and minimum recommended dimensions of 1200x630 for optimal clarity across all devices.
+  -
+    handle: og_image_alt
+    field:
+      type: text
+      display: 'og:image:alt'
+      instructions: 'Alt text for the og:image'
+  -
+    handle: og_country_name
+    field:
+      type: text
+      display: 'og:country_name'
+      instructions: 'The country the website or content originates form or pertains to'
+  -
+    handle: og_latitude
+    field:
+      type: text
+      display: 'og:latitude'
+      instructions: Latitude
+  -
+    handle: og_longitude
+    field:
+      type: text
+      display: 'og:longitude'
+      instructions: Longitude
+  -
+    handle: og_region
+    field:
+      type: text
+      display: 'og:region'
+      instructions: 'The region of the website or what the content pertains to'
+  -
+    handle: rights
+    field:
+      type: text
+      display: Rights
+      instructions: 'Put a copyright notice or whatever here, eg: ©2024 &lt;Company Name&gt;. All rights reserved.'
   -
     handle: advanced_metatags
     field:
